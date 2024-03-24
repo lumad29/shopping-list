@@ -15,7 +15,7 @@
         <div class="ma-3" >
          <v-card class="bg-teal-lighten-2 pa-1 d-flex justify-end" >
           {{ item.title }} 
-           <v-btn density="compact" class="lowercase ml-16">delete</v-btn> 
+           <v-btn density="compact" class="lowercase ml-16" @click="removeItem(index)">delete</v-btn> 
          </v-card>
        </div>
       </div>
@@ -31,52 +31,57 @@
   </v-container>
 </template>
 
-<script> 
+<script setup> 
+
+
+import {ref} from 'vue'
+
+const items = ref([])
+const newItem = ref('')
+
+function addItem() {
+  if (newItem.value.trim() === "") {
+    return;
+  }
+  items.value.push({
+    title: newItem.value
+  })
+  newItem.value = ''
+}
+
+function removeItem(index) {
+  items.value.splice(index, 1)
+}
 
 // - - -  object API - - - 
 
-export default {
-    name: "todo-list",
-    data() {
-        return {
-            newItem: "",
-            items: []
-        }
-    },
-    methods: {
-        addItem() {
-            if(this.newItem.trim() == 0) {
-                return
-            }
-            this.items.push({
-                id: this.idTodo,
-                title: this.newItem, 
-            })
-            this.newItem = '',
-            this.idTodo++
-        }, 
-        removeTodo(index) {
-           this.todos.splice(index, 1)
-        }
-    }
-}
+// export default {
+//     name: "todo-list",
+//     data() {
+//         return {
+//             newItem: "",
+//             items: []
+//         }
+//     },
+//     methods: {
+//         addItem() {
+//             if(this.newItem.trim() == 0) {
+//                 return
+//             }
+//             this.items.push({
+//                 id: this.idTodo,
+//                 title: this.newItem, 
+//             })
+//             this.newItem = '',
+//             this.idTodo++
+//         }, 
+//         removeTodo(index) {
+//            this.items.splice(index, 1)
+//         }
+//     }
+// }
 
 // - - -  Composition API - - - 
-
-// import {ref} from 'vue'
-
-// const items = ref([])
-// const newItem = ref('')
-
-// function addItem() {
-//   if (newItem.value.trim() === "") {
-//     return;
-//   }
-//   items.value.push({
-//     title: newItem.value
-//   })
-//   newItem.value = ''
-// }
 
 
 </script>
