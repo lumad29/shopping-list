@@ -60,7 +60,10 @@ function toggleAllItems() {
 
 <template>
   <v-container class="fill-height">
-    <v-row justify="center" class="bg-bluex">
+    <v-row justify="space-evenly">
+      <!-- <v-col cols="3">
+        <v-img src="../assets/grocery-shopping.jpeg" />
+      </v-col> -->
       <v-col cols="6" class="bg-redx">
         <v-responsive class="align-center text-center fill-height">
           <!-- <v-img height="60" src="@/assets/logo.svg" /> -->
@@ -114,6 +117,10 @@ function toggleAllItems() {
       </v-col>
     </v-row>
   </v-container>
+  <v-footer class="bg-teal-lighten-2 d-flex justify-center">
+    <v-btn icon="mdi-github" variant="plain" href="https://github.com/lumad29" target="_blank" />
+    Lucrecia Aloi
+  </v-footer>
 </template>
 
 <style scoped>
