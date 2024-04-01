@@ -6,16 +6,14 @@
 
 // Plugins
 import { createApp } from 'vue'
-import AppBar from '../src/components/AppBar.vue'
+// component
 import App from './App.vue'
-import { registerPlugins } from '@/plugins'
 
-// Components
+import { registerPlugins } from '@/plugins'
 
 // Composables
 
 const app = createApp(App)
-app.component('app-bar', AppBar)
+// app.component('app-bar', AppBar)
 registerPlugins(app)
-
 app.mount('#app')

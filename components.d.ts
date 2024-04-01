@@ -8,8 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./src/components/AppBar.vue')['default']
+    AppDrawer: typeof import('./src/components/AppDrawer.vue')['default']
+    AppFooter: typeof import('./src/components/AppFooter.vue')['default']
+    copy: typeof import('./src/components/AppBar copy.vue')['default']
     Drawer: typeof import('./src/components/Drawer.vue')['default']
     DrawerQue: typeof import('./src/components/DrawerQue.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    MainList: typeof import('./src/components/MainList.vue')['default']
+    ShoppingListTitle: typeof import('./src/components/ShoppingListTitle.vue')['default']
   }
 }
