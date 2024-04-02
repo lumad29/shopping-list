@@ -3,63 +3,18 @@ import { ref } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useShoppingListStore } from '@/stores/shoppingList'
 import ShoppingListTitle from '@/components/ShoppingListTitle'
+import NewItemField from '@/components/NewItemField'
 
 const store = useShoppingListStore()
 const { smAndDown } = useDisplay()
-
-// - - -  object API - - -
-
-// export default {
-//     name: "todo-list",
-//     data() {
-//         return {
-//             newItem: "",
-//             items: []
-//         }
-//     },
-//     methods: {
-//         addItem() {
-//             if(this.newItem.trim() == 0) {
-//                 return
-//             }
-//             this.shoppingListItems.push({
-//                 id: this.idTodo,
-//                 title: this.newItem,
-//             })
-//             this.newItem = '',
-//             this.idTodo++
-//         },
-//         removeTodo(index) {
-//            this.shoppingListItems.splice(index, 1)
-//         }
-//     }
-// }
-
-// - - -  Composition API - - -
 </script>
 
 <template>
   <v-container class="fill-height d-flex flex-column">
     <ShoppingListTitle />
-    <!-- <div class="py-4">
-      <div class="text-h6 font-weight-light">
-        Shopping List
-      </div>
-    </div> -->
+    <NewItemField />
     <v-row justify="space-evenly d-flex w-100">
-      <!-- <v-col cols="3">
-        <v-img src="../assets/grocery-shopping.jpeg" />
-      </v-col> -->
       <v-col :cols="smAndDown ? 12 : 6">
-        <!-- <v-responsive class="align-center text-center fill-height"> -->
-        <!-- <v-img height="60" src="@/assets/logo.svg" /> -->
-
-        <v-text-field v-model="store.newItemField" label="Add product" variant="underlined" @keyup.enter="store.addItem">
-          <template #append-inner>
-            <v-btn density="compact" icon="mdi-plus" class="bg-teal-lighten-1" @click="store.addItem" />
-          </template>
-        </v-text-field>
-
         <v-card v-if="store.shoppingListItems.length" class="pa-1 pl-8 d-flex align-center justify-end" flat>
           <v-btn
             title="save list" variant="plain"
@@ -86,7 +41,7 @@ const { smAndDown } = useDisplay()
             </v-btn>
           </div>
 
-          <v-checkbox title="mark all products purchased" density="compact" variant="plain" class="d-flex" @click="store.toggleAllShoppingListItems" />
+          <v-checkbox title="mark all products as purchased" density="compact" variant="plain" class="d-flex" @click="store.toggleAllshoppingListItems" />
         </v-card>
 
         <div v-for="(item, index) in store.shoppingListItems" :key="index">
@@ -103,7 +58,7 @@ const { smAndDown } = useDisplay()
                   class="lowercase ml-4 pr-8" @click="store.removeShoppingListItem(index)"
                 />
               </div>
-              <v-checkbox v-model="item.isChecked" title="product purchased" density="compact" variant="plain" class="d-flex" />
+              <v-checkbox v-model="item.isChecked" title="mark product as purchased" density="compact" variant="plain" class="d-flex" />
             </v-card>
           </div>
         </div>

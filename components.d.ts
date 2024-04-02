@@ -10,10 +10,13 @@ declare module 'vue' {
     AppBar: typeof import('./src/components/AppBar.vue')['default']
     AppDrawer: typeof import('./src/components/AppDrawer.vue')['default']
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
-    copy: typeof import('./src/components/AppBar copy.vue')['default']
-    Drawer: typeof import('./src/components/Drawer.vue')['default']
-    DrawerQue: typeof import('./src/components/DrawerQue.vue')['default']
-    MainList: typeof import('./src/components/MainList.vue')['default']
+    ListActionButtons: typeof import('./src/components/ListActionButtons.vue')['default']
+    ListWrapper: typeof import('./src/components/ListWrapper.vue')['default']
+    NewItemField: typeof import('./src/components/NewItemField.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    SaveListDialog: typeof import('./src/components/SaveListDialog.vue')['default']
+    ShoppingList: typeof import('./src/components/ShoppingList.vue')['default']
     ShoppingListTitle: typeof import('./src/components/ShoppingListTitle.vue')['default']
   }
 }

@@ -14,7 +14,7 @@ function toggleDrawer() {
       <v-app-bar-nav-icon @click="toggleDrawer" />
     </template>
 
-    <v-app-bar-title>Application Bar</v-app-bar-title>
+    <!-- <v-app-bar-title>Application Bar</v-app-bar-title> -->
   </v-app-bar>
 </template>
 
