@@ -31,6 +31,6 @@ const store = useShoppingListStore()
       </v-btn>
     </div>
 
-    <v-checkbox title="mark all products as purchased" density="compact" variant="plain" class="d-flex" @click="store.toggleAllshoppingListItems" />
+    <v-checkbox :model-value="store.shoppingListItems.every(item => item.isChecked)" title="mark all products as purchased" density="compact" variant="plain" class="d-flex" @click="store.toggleAllshoppingListItems" />
   </v-card>
 </template>

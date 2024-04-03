@@ -31,8 +31,17 @@ export const useShoppingListStore = defineStore('shoppingList', {
       this.newItemField = ''
     },
 
-    removeShoppingListItem(index) {
+    removeShoppingListItem(index, title) {
       this.shoppingListItems.splice(index, 1)
+      const store = useStore()
+      store.showSnackBar(`${title} is removed from the list`)
+    },
+
+    toggleCheck(index, title) {
+      this.shoppingListItems[index].isChecked = !this.shoppingListItems[index].isChecked
+      const store = useStore()
+      if (this.shoppingListItems[index].isChecked)
+        store.showSnackBar(`${title} is marked as purchased`)
     },
 
     removeAllshoppingListItems() {
@@ -42,6 +51,9 @@ export const useShoppingListStore = defineStore('shoppingList', {
     toggleAllshoppingListItems() {
       const allshoppingListItemsSelected = this.shoppingListItems.every(item => item.isChecked)
       this.shoppingListItems.forEach((item) => { item.isChecked = !allshoppingListItemsSelected })
+      const store = useStore()
+      if (!allshoppingListItemsSelected)
+        store.showSnackBar(`all items marked as purchased`)
     },
 
     saveList() {

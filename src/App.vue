@@ -1,4 +1,5 @@
 <script setup>
+import NotificationSnackBar from './components/NotificationSnackBar.vue'
 import AppBar from '@/components/AppBar.vue'
 import AppDrawer from '@/components/AppDrawer.vue'
 import AppFooter from '@/components/AppFooter'
@@ -13,6 +14,7 @@ import SaveListDialog from '@/components/SaveListDialog'
       <RouterView />
       <AppFooter />
       <SaveListDialog />
+      <NotificationSnackBar />
     </v-main>
   </v-app>
 </template>

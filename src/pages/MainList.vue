@@ -7,6 +7,10 @@ import ShoppingList from '@/components/ShoppingList'
 import ListWapper from '@/components/ListWrapper'
 
 const store = useShoppingListStore()
+
+function showItemName(title) {
+  alert(title)
+}
 </script>
 
 <template>
@@ -15,7 +19,7 @@ const store = useShoppingListStore()
     <ListWapper>
       <NewItemField />
       <ListActionButtons />
-      <ShoppingList :items="store.shoppingListItems" @remove-items="store.removeShoppingListItem" @toggle-check="store.toggleCheck" />
+      <ShoppingList :items="store.shoppingListItems" @remove-item="store.removeShoppingListItem" @toggle-check="store.toggleCheck" @show-item-name="showItemName" />
     </ListWapper>
   </v-container>
 </template>

@@ -13,6 +13,7 @@ declare module 'vue' {
     ListActionButtons: typeof import('./src/components/ListActionButtons.vue')['default']
     ListWrapper: typeof import('./src/components/ListWrapper.vue')['default']
     NewItemField: typeof import('./src/components/NewItemField.vue')['default']
+    NotificationSnackBar: typeof import('./src/components/NotificationSnackBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SaveListDialog: typeof import('./src/components/SaveListDialog.vue')['default']
